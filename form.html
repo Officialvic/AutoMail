@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AutoMail | SendMail</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <nav class="container row">
+        <h1>Auto<span class="color-text">Mail</span></h1>
+        <ul class="row">
+            <li class="active"><a href="index.html">Home</a></li>
+            <li><a href="#">SendMail</a></li>
+            <li><a href="#">Blog</a></li>
+            <li><a href="#">Pricing</a></li>
+            <button class="btn"><a href="#" class="btn-text">Support</a></button>
+        </ul>
+    </nav>
+    <main>
+        <!-- <select name="themes" id="themes">
+            <option value="default">Select Theme</option>
+            <option value="blue">Blue</option>
+            <option value="red">Red</option>
+        </select> -->
+        <div class="theme">
+            <label for="">Select your preferred theme color</label><br>
+            <input type="color" name="color" id="color"><br>
+            <select name="width" id="width">
+                <option value="default">Select width</option>
+                <option value="100%">100%</option>
+                <option value="70%">70%</option>
+                <option value="50%">50%</option>
+            </select><br>
+            <button class="btn btn-theme" onclick="applyTheme()">Change Theme</button>
+        </div>
+
+
+        <!-- Client Form -->
+        <form action="" name="clientForm" id="" onsubmit="addItem(event)">
+            <input type="text" name="firstName" id="firstName" placeholder="First Name"><br>
+            <input type="text" name="lastName" id="lastName" placeholder="Last Name"><br>
+            <input type="email" name="email" id="email" placeholder="Email"><br>
+            <input type="tel" name="phonenumber" id="phonenumber" placeholder="Phone Number"><br>
+            <select name="gender" id="gender">
+                <option value="default">Select Gender</option>
+                <option value="male">Male</option>
+                <option value="female">Female</option>
+            </select><br>
+            <select name="program" id="program">
+                <option value="default">Select track</option>
+                <option value="frontend">Frontend</option>
+                <option value="backend">Backend</option>
+            </select><br>
+            <input type="submit" value="Submit" class="btn">
+        </form>
+        <!-- Client Biometric Table -->
+        <h1 class="l-heading">Clients Biometric Information</h1>
+        <table id="biometric" >
+            <thead>
+                <th>First name</th>
+                <th>Last name</th>
+                <th>Email</th>
+                <th>Phone Number</th>
+                <th>Gender</th>
+                <th>Program Track</th>
+            </thead>
+        </table>
+        
+    </main>
+    <footer></footer>
+
+
+    <script>
+        var biometricInfo = document.getElementById('biometric')
+        // inventoryItems.setAttribute('class', 'blueTheme')
+        function addItem(e) {
+            e.preventDefault();
+            let clientForm = document.forms['clientForm']
+            
+            // let biometricInfo = document.getElementById('firstName').value
+
+            // Getting data through the formData
+            
+            let data = new FormData(clientForm);
+
+            // data.get('firstName')
+
+            let row = biometricInfo.insertRow();
+            
+            // row.insertCell().innerHTML = data.get('firstName');
+            // row.insertCell().innerHTML = data.get('lastName');
+            // row.insertCell().innerHTML = data.get('email');
+            // row.insertCell().innerHTML = data.get('phonenumber');
+            // row.insertCell().innerHTML = data.get('gender');
+            // row.insertCell().innerHTML = data.get('program');
+
+            // Iterate through each of the form elements
+            for (let [key, value] of data) {
+            row.insertCell().innerHTML = data.get(key);
+        }
+        }
+
+
+        function applyTheme () {
+        //     let selectedTheme = document.getElementById('themes')
+
+                // let selectedTheme = document.getElementById('themes')
+                let selectedBgColor = document.getElementById('color')
+                let selectedBgWidth = document.getElementById('width')
+                // selectedTheme.style.backgroundColor = 'red'
+                biometricInfo.setAttribute('class', 'changeTheme')
+                biometricInfo.style.backgroundColor = selectedBgColor.value
+                biometricInfo.style.width = selectedBgWidth.value
+                // if(selectedTheme.value == "blue") {
+                //     biometricInfo.setAttribute('class', 'blueTheme')
+                // }else {
+                //     biometricInfo.setAttribute('class', 'redTheme')
+                // } 
+            }
+            //     console.log(selectedTheme.value)
+    </script>
+</body>
+</html>

@@ -1,0 +1,131 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+:root {
+    --primary-color: #008BD0;
+    --primaryblur-color: #22a0de;
+    --white-color: #fff;
+}
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    font-family: 'Montserrat', sans-serif;
+}
+body {
+    background-color: #d7d7d7;
+}
+
+.container {
+    padding: 2.5rem 3.4rem;
+}
+.row {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 30px;
+}
+.btn {
+    background-color: var(--primary-color);
+    padding: .8rem .9rem;
+    border: none;
+    border-radius: 6px;
+}
+.btn:hover {
+    background-color: var(--primaryblur-color);
+}
+.btn-text {
+    color: #fff;
+}
+a, li {
+    list-style: none ;
+    text-decoration: none;
+    color: #000;
+    font-size: 0.9rem;
+}
+.l-heading {
+    color: var(--primary-color);
+    text-align: center;
+    margin-top: 30px;
+}
+.active {
+    border-bottom: 2px solid var(--primary-color);
+    padding: 0.9rem;
+}
+.color-text {
+    color: var(--primary-color);
+}
+header {
+    background-image: url('img/email.jpg');
+    height: 100vh;
+    position: relative;
+    color: var(--white-color);
+}
+
+.overlay {
+    background-image: linear-gradient(to right, #000 , var(--primary-color));    
+    height: 100vh;
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    opacity: 0.6;
+    z-index: 0;
+}
+nav, .showcase-content {
+    position: relative;
+    z-index: 1;
+}
+
+.showcase-content {
+    text-align: center;
+    padding: 60px;
+}
+
+.showcase-content > h1,
+.showcase-content > p,
+.showcase-content > button {
+    margin-top: 1.2rem;
+}
+
+/* Table Styling */
+
+.changeTheme {
+    color: black;
+    text-align: center;
+}
+
+/* .redTheme {
+    background-color: red;
+    width: 800px;
+    margin: auto;
+    color: white;
+} */
+
+input, select {
+    margin: 5px;
+    width: 300px;
+    padding: 5px;
+    border: 1px solid var(--primary-color);
+    border-radius: 5px;
+    
+}
+form {
+    width: 300px;
+    margin: auto;
+}
+
+
+.theme {
+    margin-bottom: 20px;
+    text-align: center;
+}
+.btn-theme {
+    margin-top: 10px;
+}
+table {
+    width: 900px;
+    margin: auto;
+    text-align: center;
+    padding: 5px;
+    border-radius: 5px;
+}

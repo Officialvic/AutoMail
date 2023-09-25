@@ -37,7 +37,7 @@
 
 
         <!-- Client Form -->
-        <form action="" name="clientForm" id="" onsubmit="addItem(event)">
+        <form action="" name="clientForm" id="clientForm" onsubmit="addItem(event)">
             <input type="text" name="firstName" id="firstName" placeholder="First Name"><br>
             <input type="text" name="lastName" id="lastName" placeholder="Last Name"><br>
             <input type="email" name="email" id="email" placeholder="Email"><br>
@@ -70,55 +70,6 @@
     </main>
     <footer></footer>
 
-
-    <script>
-        var biometricInfo = document.getElementById('biometric')
-        // inventoryItems.setAttribute('class', 'blueTheme')
-        function addItem(e) {
-            e.preventDefault();
-            let clientForm = document.forms['clientForm']
-            
-            // let biometricInfo = document.getElementById('firstName').value
-
-            // Getting data through the formData
-            
-            let data = new FormData(clientForm);
-
-            // data.get('firstName')
-
-            let row = biometricInfo.insertRow();
-            
-            // row.insertCell().innerHTML = data.get('firstName');
-            // row.insertCell().innerHTML = data.get('lastName');
-            // row.insertCell().innerHTML = data.get('email');
-            // row.insertCell().innerHTML = data.get('phonenumber');
-            // row.insertCell().innerHTML = data.get('gender');
-            // row.insertCell().innerHTML = data.get('program');
-
-            // Iterate through each of the form elements
-            for (let [key, value] of data) {
-            row.insertCell().innerHTML = data.get(key);
-        }
-        }
-
-
-        function applyTheme () {
-        //     let selectedTheme = document.getElementById('themes')
-
-                // let selectedTheme = document.getElementById('themes')
-                let selectedBgColor = document.getElementById('color')
-                let selectedBgWidth = document.getElementById('width')
-                // selectedTheme.style.backgroundColor = 'red'
-                biometricInfo.setAttribute('class', 'changeTheme')
-                biometricInfo.style.backgroundColor = selectedBgColor.value
-                biometricInfo.style.width = selectedBgWidth.value
-                // if(selectedTheme.value == "blue") {
-                //     biometricInfo.setAttribute('class', 'blueTheme')
-                // }else {
-                //     biometricInfo.setAttribute('class', 'redTheme')
-                // } 
-            }
-            //     console.log(selectedTheme.value)
-    </script>
+    <script src="script.js"></script>
 </body>
 </html>
